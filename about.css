@@ -1,0 +1,281 @@
+@import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: #3E439D;
+}
+.circle {
+    height: 24px;
+    width: 24px;
+    border-radius: 24px;
+    background-color: black;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 99999999; 
+} 
+
+
+/* navbar */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+header.scrolled {
+    background-color: #F584B2; 
+    transition: background-color 0.3s ease;
+}
+.logo {
+    font-size: 1.4em;
+    color: #fff;
+    user-select: none;
+}
+.navigation a {
+    position: relative;
+    font-size: 0.8em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+.navigation a:not(.btnlogout-popup)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+}
+.navigation a:not(.btnlogout-popup):hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+.navigation .btnlogout-popup {
+    display: inline-block;
+    width: 80px;
+    height: auto;
+    line-height: 40px;
+    text-align: center;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: 0.5s;
+    text-decoration: none;
+}
+.navigation .btnlogout-popup:hover {
+    background: #fff;
+    color: #3E439D;
+}
+
+
+/* parallax */
+.banner{
+    position:relative;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+}
+.banner::before{
+    content:'';
+    position:absolute;
+    bottom:0;
+    left: 0;
+    height:200px;
+    width:100%;
+    z-index:1000;
+    background: linear-gradient(to top, #3E439D 20%, transparent);
+}
+.banner img{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+
+
+/* about */
+section#about{
+    position:relative; 
+    padding:100px;
+}
+.container{
+    position:relative;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.container .textBx{
+    max-width: 50%;
+}
+.container .textBx .title{
+    font-size: 2em;
+    color: #ffff;
+}
+.container .textBx p{
+    font-size: 1em;
+    color: #ffff ;
+}
+.imgBx{
+    width:40%;
+}
+.imgBx img{
+    max-width:100%;
+}
+
+
+/* chat */
+.btn-floating-whatsapp {
+    display: inline-block;
+    height: 35px;
+    width:35px;
+    background-color: rgba(255,255,255,0.2);
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+    position: fixed; 
+    bottom: 20px;    
+    right: 20px;     
+    z-index: 20000;   
+    border: 2px #EF2D7C;
+}
+.btn-floating-whatsapp:hover {
+    color: #3E439D;
+    background-color: #ffffff;
+}
+.iconwa {
+    font-size: 20px;
+}
+  
+
+/* footer */
+.containers{
+	max-width: 1000px;
+  align-items: center;
+	margin:auto;
+  font-family:'poppins';
+}
+.rows{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: #F584B2;
+  padding: 20px 0 0 0;
+}
+.footer-logo {
+  width: 45%;
+  padding: 0 120px;
+  margin-top: 85px;
+}
+.footer-logo h4{
+  font-size: 1.7em;
+    color: #fff;
+    text-shadow: 
+    0 0 0px #fff,
+    0 0 5px #fff,
+    0 0 5px #EF2D7C,
+    0 0 5px #EF2D7C,
+    0 0 10px #EF2D7C,
+    0 0 20px #EF2D7C;
+	text-transform: capitalize;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+   margin-top: 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #EF2D7C;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #fff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #fff;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 35px;
+	width: 35px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #3E439D;
+	background-color: #ffffff;
+}
+.bottom-bar {
+  background: #3E439D;
+  text-align: center;
+  padding: 5px;
+  margin-top: 50px;
+}
+.bottom-bar p {
+  justify-content: end;
+  color: #fff;
+  margin: 0;
+  font-size: 14px;
+  padding: 7px;}
